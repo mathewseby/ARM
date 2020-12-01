@@ -3,7 +3,6 @@
 # install git
 apt-get -y update
 apt-get -y install git
-
 # install terraform
 apt-get -y update
 apt-get -y install wget
