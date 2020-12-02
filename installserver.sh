@@ -16,8 +16,12 @@ git clone https://github.com/scalar-labs/scalar-terraform.git
 cp -ar scalar-terraform /opt/
 
 # create bastion server
-cd scalar-terraform/examples/azure/network
+cd /opt/scalar-terraform/examples/azure/network
 ssh-keygen -b 2048 -t rsa -f ./example_key -q -N ""
 chmod 400 example_key
 ssh-add example_key
+search="example-azure"
+replace=$1
+sed -i "s/$search/$replace/" /opt/scalar-terraform/examples/azure/network/example.tfvars
+
 terraform init
