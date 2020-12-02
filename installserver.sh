@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # install git
-sudo apt-get -y update
-sudo apt-get -y install git
+apt-get -y update
+apt-get -y install git
 # install terraform
-sudo apt-get -y update
-sudo apt-get -y install wget
+apt-get -y update
+apt-get -y install wget
 wget https://releases.hashicorp.com/terraform/0.12.8/terraform_0.12.8_linux_amd64.zip
 unzip terraform_0.12.8_linux_amd64.zip
-sudo cp terraform /usr/local/bin/
+cp terraform /usr/local/bin/
 
 # clone scalar-terraform
 git clone https://github.com/scalar-labs/scalar-terraform.git
