@@ -13,6 +13,7 @@ cp terraform /usr/local/bin/
 
 # clone scalar-terraform
 git clone https://github.com/scalar-labs/scalar-terraform.git
+cp -ar scalar-terraform /opt/
 
 # create bastion server
 cd scalar-terraform/examples/azure/network
