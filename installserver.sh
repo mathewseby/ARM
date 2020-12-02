@@ -25,3 +25,4 @@ replace=$1
 sed -i "s/$search/$replace/" /opt/scalar-terraform/examples/azure/network/example.tfvars
 
 terraform init
+terraform apply -var-file example.tfvars
