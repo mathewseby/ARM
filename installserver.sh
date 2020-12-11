@@ -1,28 +1,5 @@
 #!/bin/bash
-  
-apt-get -y update
-apt-get -y install git
-# install terraform
-apt-get -y update
-apt-get -y install unzip
-apt-get -y update
-apt-get -y install wget
-wget https://releases.hashicorp.com/terraform/0.12.8/terraform_0.12.8_linux_amd64.zip
-unzip terraform_0.12.8_linux_amd64.zip
-cp terraform /usr/local/bin/
 
-# clone scalar-terraform
-git clone https://github.com/scalar-labs/scalar-terraform.git
-cp -ar scalar-terraform /opt/
+var1=$(az vmss nic list -g mathew-arm-test --vmss-name mathew-cassandra-test --query [].{ip:ipConfigurations[0].privateIpAddress} -o tsv | awk -vORS=, '{ print $1 }' | sed 's/,$/\n/')
 
-# create bastion server
-cd /opt/scalar-terraform/examples/azure/network
-ssh-keygen -b 2048 -t rsa -f ./example_key -q -N ""
-chmod 400 example_key
-ssh-add example_key
-search="example-azure"
-replace=$1
-sed -i "s/$search/$replace/" /opt/scalar-terraform/examples/azure/network/example.tfvars
-
-terraform init
-terraform apply -var-file example.tfvars
+sed 's/seeds: .\+/seeds: '$var1'/g' ./cassandra
