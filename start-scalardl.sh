@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Add user to docker group
-sudo usermod -aG docker $USER
+sudo usermod -aG docker centos
+sudo systemctl restart docker
 
 #export values for docker-compose
 export SCALAR_IMAGE=scalarlabs/scalar-ledger:2.1.0
