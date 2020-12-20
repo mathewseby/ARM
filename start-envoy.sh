@@ -2,8 +2,7 @@
 
 # Add user to docker group
 sudo usermod -aG docker centos
-sudo pkill -f centos
-sudo systemctl start docker
+newgrp docker
 
 #export values for docker-compose
 export ENVOY_IMAGE=envoyproxy/envoy
