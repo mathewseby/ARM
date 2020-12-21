@@ -6,4 +6,4 @@ export ENVOY_PORT=50051
 export ENVOY_PRIVILEGED_PORT=50052
 
 #run docker compose
-cd /opt/scalar-envoy ; docker-compose up -d
+cd /opt/provision ; docker-compose up -d
