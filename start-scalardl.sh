@@ -8,5 +8,8 @@ export SCALAR_DB_CONTACT_PORT=9042
 export SCALAR_DB_USERNAME=cassandra
 export SCALAR_DB_PASSWORD=cassandra
 
-#run docker compose
-cd /opt ; docker-compose up -d
+#run docker compose for scalardl
+cd /opt/scalardl ; docker-compose up -d
+
+#run docker compose for load-schema
+cd /opt/load-schema ; docker-compose up -d
