@@ -10,6 +10,3 @@ export SCALAR_DB_PASSWORD=cassandra
 
 #run docker compose for scalardl
 cd /opt/scalardl ; docker-compose up -d
-
-#run docker compose for load-schema
-cd /opt/load-schema ; docker-compose up -d
