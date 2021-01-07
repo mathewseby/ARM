@@ -17,6 +17,8 @@
 #install jq
 #sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 #sudo yum install jq -y
+az login --service-principal -u 960959df-1788-474c-b123-5a7fd0283579 -p F~dH1suJmZdYZ~wUi6ySSNibZtb~0Dj2Pi --tenant d4ecf981-1f8f-4d2f-8521-1aa55568601e
+
 
 var1= $(az cosmosdb show --name mathew-cosmos-test --resource-group mathew-arm-test | jq '.documentEndpoint')
 var2= $(az cosmosdb keys list --name mathew-cosmos-test --resource-group mathew-arm-test --subscription b647bf0e-0566-4b28-ac8c-37b24f3b7061 --type keys | jq '.primaryMasterKey')
