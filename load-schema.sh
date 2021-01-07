@@ -20,4 +20,4 @@
 
 var1= $(az cosmosdb show --name mathew-cosmos-test --resource-group mathew-arm-test | jq '.documentEndpoint')
 var2= $(az cosmosdb keys list --name mathew-cosmos-test --resource-group mathew-arm-test --subscription b647bf0e-0566-4b28-ac8c-37b24f3b7061 --type keys | jq '.primaryMasterKey')
-docker run --rm scalar-labs/scalardl-schema-loader:1.3.0 --cosmos -h $var1 -p $var2
+docker run --rm scalarlabs/scalardl-schema-loader:1.3.0 --cosmos -h $var1 -p $var2
