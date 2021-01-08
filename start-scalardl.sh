@@ -14,17 +14,19 @@ var2= $(az cosmosdb keys list --name mathew-cosmos-test --resource-group mathew-
 #export SCALAR_DB_PASSWORD=cassandra
 export dbContactPoints= $var1
 export dbpassword= $var2
+export SCALAR_DB_CONTACT_POINTS= $var1
+export SCALAR_DB_PASSWORD= $var2
 
 
 #Replace load-schemadocker compose values
-sed -i 's/dbContactPoints= .\+/dbContactPoints= '$var1'/g' /opt/load-schema/docker-compose.yml
-sed -i 's/dbpassword= .\+/dbpassword= '$var2'/g' /opt/load-schema/docker-compose.yml
+#sed -i 's/dbContactPoints= .\+/dbContactPoints= '$var1'/g' /opt/load-schema/docker-compose.yml
+#sed -i 's/dbpassword= .\+/dbpassword= '$var2'/g' /opt/load-schema/docker-compose.yml
 
 #Replace scalardl docker compose values
-sed -i 's/image: .\+/image: scalarlabs/scalar-ledger:2.1.0/g' /opt/load-schema/docker-compose.yml
-sed -i 's/SCALAR_DB_STORAGE= .\+/SCALAR_DB_STORAGE= cosmos/g' /opt/scalardl/docker-compose.yml
-sed -i 's/SCALAR_DB_CONTACT_POINTS= .\+/SCALAR_DB_CONTACT_POINTS= '$var1'/g' /opt/scalardl/docker-compose.yml
-sed -i 's/SCALAR_DB_PASSWORD= .\+/SCALAR_DB_PASSWORD= '$var2'/g' /opt/scalardl/docker-compose.yml
+#sed -i 's/image: .\+/image: scalarlabs/scalar-ledger:2.1.0/g' /opt/load-schema/docker-compose.yml
+#sed -i 's/SCALAR_DB_STORAGE= .\+/SCALAR_DB_STORAGE= cosmos/g' /opt/scalardl/docker-compose.yml
+#sed -i 's/SCALAR_DB_CONTACT_POINTS= .\+/SCALAR_DB_CONTACT_POINTS= '$var1'/g' /opt/scalardl/docker-compose.yml
+#sed -i 's/SCALAR_DB_PASSWORD= .\+/SCALAR_DB_PASSWORD= '$var2'/g' /opt/scalardl/docker-compose.yml
 
 
 #run docker compose for scalardl
